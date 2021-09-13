@@ -60,8 +60,10 @@
 // accordingly.
 #define KC_ADC_TEST
 #if defined (KC_ADC_TEST)
-  #define IADC_INPUT_0_BUS          ABUSALLOC
-  #define IADC_INPUT_0_BUSALLOC     GPIO_ABUSALLOC_AEVEN0_ADC0
+  //#define IADC_INPUT_0_BUS          ABUSALLOC
+  //#define IADC_INPUT_0_BUSALLOC     GPIO_ABUSALLOC_AEVEN0_ADC0
+  #define IADC_INPUT_0_BUS          BBUSALLOC
+  #define IADC_INPUT_0_BUSALLOC     GPIO_BBUSALLOC_BEVEN0_ADC0
 #else
   #define IADC_INPUT_0_BUS          CDBUSALLOC
   #define IADC_INPUT_0_BUSALLOC     GPIO_CDBUSALLOC_CDEVEN0_ADC0
@@ -133,11 +135,12 @@ void initIADC (void)
   // Configure entries in scan table, CH0 is single ended from input 0, CH1 is
   // single ended from input 1
 #if defined (KC_ADC_TEST)
-  initScanTable.entries[0].posInput = iadcPosInputPortAPin0; // PC04 -> P25 on BRD4001 J102
+  //initScanTable.entries[0].posInput = iadcPosInputPortAPin0; // PA00 -> P14
+  initScanTable.entries[0].posInput = iadcPosInputPortBPin2; // PB02 -> P12
   initScanTable.entries[0].negInput = iadcNegInputGnd;
   initScanTable.entries[0].includeInScan = true;
 #else
-  initScanTable.entries[0].posInput = iadcPosInputPortCPin4; // PA00 -> P14 on BRD4001
+  initScanTable.entries[0].posInput = iadcPosInputPortCPin4; // PC04 -> P25 on BRD4001 J102
   initScanTable.entries[0].negInput = iadcNegInputGnd;
   initScanTable.entries[0].includeInScan = true;
 #endif
