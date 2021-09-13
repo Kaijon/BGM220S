@@ -58,8 +58,15 @@
 
 // When changing GPIO port/pins below, make sure to change xBUSALLOC macro's
 // accordingly.
-#define IADC_INPUT_0_BUS          CDBUSALLOC
-#define IADC_INPUT_0_BUSALLOC     GPIO_CDBUSALLOC_CDEVEN0_ADC0
+#define KC_ADC_TEST
+#if defined (KC_ADC_TEST)
+  #define IADC_INPUT_0_BUS          ABUSALLOC
+  #define IADC_INPUT_0_BUSALLOC     GPIO_ABUSALLOC_AEVEN0_ADC0
+#else
+  #define IADC_INPUT_0_BUS          CDBUSALLOC
+  #define IADC_INPUT_0_BUSALLOC     GPIO_CDBUSALLOC_CDEVEN0_ADC0
+#endif
+
 #define IADC_INPUT_1_BUS          CDBUSALLOC
 #define IADC_INPUT_1_BUSALLOC     GPIO_CDBUSALLOC_CDODD0_ADC0
 
@@ -125,9 +132,15 @@ void initIADC (void)
 
   // Configure entries in scan table, CH0 is single ended from input 0, CH1 is
   // single ended from input 1
-  initScanTable.entries[0].posInput = iadcPosInputPortCPin4; // PC04 -> P25 on BRD4001 J102
+#if defined (KC_ADC_TEST)
+  initScanTable.entries[0].posInput = iadcPosInputPortAPin0; // PC04 -> P25 on BRD4001 J102
   initScanTable.entries[0].negInput = iadcNegInputGnd;
   initScanTable.entries[0].includeInScan = true;
+#else
+  initScanTable.entries[0].posInput = iadcPosInputPortCPin4; // PA00 -> P14 on BRD4001
+  initScanTable.entries[0].negInput = iadcNegInputGnd;
+  initScanTable.entries[0].includeInScan = true;
+#endif
 
   initScanTable.entries[1].posInput = iadcPosInputPortCPin5; // PC05 -> P27 on BRD4001 J102
   initScanTable.entries[1].negInput = iadcNegInputGnd;
