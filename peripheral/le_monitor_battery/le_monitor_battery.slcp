@@ -20,6 +20,7 @@ include:
 sdk: {id: gecko_sdk, version: 3.2.2}
 toolchain_settings: []
 component:
+- {id: emlib_iadc}
 - {id: BGM220SC12WGA}
 - {id: bluetooth_feature_connection}
 - {id: brd4001a}
