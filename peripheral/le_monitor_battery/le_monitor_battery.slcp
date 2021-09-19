@@ -22,6 +22,7 @@ toolchain_settings: []
 component:
 - {id: emlib_iadc}
 - {id: BGM220SC12WGA}
+- {id: emlib_ldma}
 - {id: bluetooth_feature_connection}
 - {id: brd4001a}
 - {id: bluetooth_feature_gatt_server}
