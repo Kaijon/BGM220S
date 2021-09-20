@@ -48,4 +48,18 @@
       </properties>
     </characteristic>
   </service>
+  
+  <!--Voltage Monitor-->
+  <service advertise="false" id="voltage_monitor" name="Voltage Monitor" requirement="mandatory" sourceId="" type="primary" uuid="04047982-827f-4aea-9428-8cc1fd7e0830">
+    <informativeText/>
+    
+    <!--Average Voltage Data-->
+    <characteristic const="false" id="avg_voltage_data" name="Average Voltage Data" sourceId="" uuid="56bfd2d9-b48d-47ba-b17b-6db02584b983">
+      <informativeText/>
+      <value length="0" type="user" variable_length="false"/>
+      <properties>
+        <notify authenticated="false" bonded="false" encrypted="false"/>
+      </properties>
+    </characteristic>
+  </service>
 </gatt>
