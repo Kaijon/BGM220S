@@ -4,8 +4,8 @@
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
     <property object="PA04" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_MX25_FLASH_SHUTDOWN_CS%T%sl_mx25_flash_shutdown_usart_config.h"/>
     <property object="PA04" propertyId="pin.reserve" value="Reserved"/>
-    <property object="PB00" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_EMLIB_GPIO_INIT_PIN%T%sl_emlib_gpio_init_pin_config.h"/>
-    <property object="PB00" propertyId="pin.name" value="btnInput"/>
+    <property object="PB00" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_EMLIB_GPIO_INIT_PINB0_IN%T%sl_emlib_gpio_init_pinB0_IN_config.h"/>
+    <property object="PB00" propertyId="pin.name" value="btnB_IN"/>
     <property object="PB00" propertyId="pin.reserve" value="Reserved"/>
     <property object="PB04" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_BOARD_ENABLE_VCOM%T%sl_board_control_config.h"/>
     <property object="PB04" propertyId="pin.reserve" value="Reserved"/>
