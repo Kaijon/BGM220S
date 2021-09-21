@@ -20,26 +20,29 @@ include:
 sdk: {id: gecko_sdk, version: 3.2.2}
 toolchain_settings: []
 component:
-- {id: emlib_iadc}
-- {id: BGM220SC12WGA}
+- {id: throughput_ui_log}
 - {id: emlib_ldma}
-- {id: bluetooth_feature_connection}
-- {id: brd4001a}
 - {id: bluetooth_feature_gatt_server}
-- {id: bluetooth_feature_advertiser}
 - {id: bluetooth_feature_sm}
 - {id: mpu}
-- {id: bluetooth_feature_system}
 - {id: gatt_configuration}
-- {id: bluetooth_feature_scanner}
-- {id: emlib_letimer}
 - {id: bluetooth_stack}
+- {id: rail_util_pti}
+- {id: bluetooth_feature_gatt}
+- {id: emlib_iadc}
+- {id: BGM220SC12WGA}
+- {id: bluetooth_feature_connection}
+- {id: brd4001a}
+- {id: bluetooth_feature_advertiser}
+- instance: [vcom]
+  id: iostream_usart
+- {id: bluetooth_feature_system}
+- {id: emlib_letimer}
+- {id: bluetooth_feature_scanner}
 - {id: component_catalog}
 - {id: ota_dfu}
 - {id: bootloader_interface}
-- {id: rail_util_pti}
 - {id: app_assert}
-- {id: bluetooth_feature_gatt}
 - {id: brd4310a}
 other_file:
 - {path: create_bl_files.bat}
