@@ -31,6 +31,8 @@ component:
 - {id: bluetooth_feature_gatt}
 - {id: emlib_iadc}
 - {id: BGM220SC12WGA}
+- instance: [pin]
+  id: emlib_gpio_simple_init
 - {id: bluetooth_feature_connection}
 - {id: brd4001a}
 - {id: bluetooth_feature_advertiser}
